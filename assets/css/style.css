@@ -1,0 +1,135 @@
+header, h2 {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+footer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h2 {
+    margin-top: 3em;
+    
+}
+
+hr {
+    margin-top: 3em;
+    margin-bottom: 3em;
+
+}
+
+
+.art1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.art2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: -9em;
+
+}
+
+.art3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 5em;
+
+}
+
+.art4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: -12em;
+
+}
+
+
+.gauche {
+    margin-left: 15em;
+
+}
+
+.gauche2 {
+    margin-left: 17em;
+
+}
+
+.gauche3 {
+    margin-left: 18.5em;
+
+}
+
+
+.droite {
+    margin-right: 15em;
+
+}
+
+.droite2 {
+    margin-right: 18.5em;
+
+}
+
+.droite3 {
+    margin-right: 17.5em;
+
+}
+
+.h4a {
+    margin-right: 20em;
+    margin-top: -1em;
+
+}
+
+.h4b {
+    margin-left: 20.25em;
+    margin-top: -1em;
+
+}
+
+.ulG {
+    margin-left: 5em;
+
+}
+
+.ulG2 {
+    margin-left: 12em;
+
+}
+
+.ulG3 {
+    margin-left: 17.5em;
+
+}
+
+.ulD {
+    margin-right: 9em;
+
+}
+
+.ulD2 {
+    margin-right: 24em;
+
+}
+
+.ulD3 {
+    margin-right: 22em;
+
+}
