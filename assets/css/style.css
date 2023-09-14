@@ -40,29 +40,24 @@ article {
     justify-content: center;
 }
 
-.mail {
-    width: 96%;
+.liencontact {
     display: flex;
+    gap: 1em;
     align-items: center;
-    justify-content: center;
-    gap: 3em;
+    
 }
 
-.num {
-    width: 96%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3em;
-    margin-top: 3em;
+ul {
+    list-style-type:none;
+
 }
 
-.link {
-    width: 96%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3em;
-    margin-top: 3em;
+h1, h2, h3, h4 {
+    font-family: 'Lunasima', sans-serif;
+
+}
+
+p, li, footer {
+    font-family: 'Mooli', sans-serif;
 
 }
