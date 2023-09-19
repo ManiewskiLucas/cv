@@ -1,13 +1,13 @@
 body {
     width: 90em;
     margin: auto;
-    background: rgb(39,182,178);
-    background: radial-gradient(circle, rgba(39,182,178,1) 0%, rgba(20,123,128,1) 69%);
-
+    background: rgb(61,190,186);
+    background: radial-gradient(circle, rgba(61,190,186,1) 15%, rgba(36,152,148,1) 43%, rgba(51,179,199,1) 82%);
 }
 
 header {
     margin-top: 2em;
+    color: white;
 
 
 }
@@ -33,7 +33,8 @@ main {
 
 article {
     width: 50%;
-    background-color: #5DD39E;
+    background-color: #8ecae6;
+    
 
 }
 
@@ -56,62 +57,46 @@ h1, h2, h3, h4 {
 
 }
 
-p, li, footer, a, summary {
+footer, a, summary {
     font-family: 'Mooli', sans-serif;
 
 }
 
-li, summary {
+p {
     margin-top: 10px;
+    text-align: center;
+    font-family: 'Mooli', sans-serif;
+
 
 
 }
 
-/* La suite correspond aux couleurs */
 
 
 
-h3 {
-    background-color: #348AA7;
+h3, h4{
     text-align: center;
-    width:75%;
     margin:auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    height: 35px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     display: flex;
     justify-content: center ;
     align-items: center;
 
-}
 
-div h3 {
-    width:35%;
+}}
 
+article hr {
+    width: 150px;
+    height: 2px;
 
 }
 
 summary {
-    background-color: #5DD39E;
-    width: 55%;
-    margin: auto ;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 37px;
     text-align: center;
-}
-
-h4 {
-    background-color: #A3D5FF;
-    margin: auto;
+    margin:auto;
     margin-top: 25px;
     margin-bottom: 25px;
-    text-align: center;
-    width : 65% ;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    list-style-position: outside;
 
 }
-
