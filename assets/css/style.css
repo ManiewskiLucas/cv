@@ -1,6 +1,8 @@
 body {
     width: 90em;
     margin: auto;
+    background: rgb(39,182,178);
+    background: radial-gradient(circle, rgba(39,182,178,1) 0%, rgba(20,123,128,1) 69%);
 
 }
 
@@ -31,13 +33,14 @@ main {
 
 article {
     width: 50%;
-
+    background-color: #5DD39E;
 
 }
 
 .contact {
     display: flex;
     justify-content: center;
+
 }
 
 .liencontact {
@@ -47,10 +50,6 @@ article {
     
 }
 
-ul {
-    list-style-type:none;
-
-}
 
 h1, h2, h3, h4 {
     font-family: 'Lunasima', sans-serif;
@@ -63,7 +62,56 @@ p, li, footer, a, summary {
 }
 
 li, summary {
-    margin-top: 15px;
+    margin-top: 10px;
+
+
+}
+
+/* La suite correspond aux couleurs */
+
+
+
+h3 {
+    background-color: #348AA7;
+    text-align: center;
+    width:75%;
+    margin:auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 35px;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+
+}
+
+div h3 {
+    width:35%;
+
+
+}
+
+summary {
+    background-color: #5DD39E;
+    width: 55%;
+    margin: auto ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 37px;
+    text-align: center;
+}
+
+h4 {
+    background-color: #A3D5FF;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    width : 65% ;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
