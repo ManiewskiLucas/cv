@@ -1,9 +1,8 @@
 body {
     width: 90em;
     margin: auto;
-    background: rgb(61,190,186);
-    background: radial-gradient(circle, rgba(61,190,186,1) 15%, rgba(36,152,148,1) 43%, rgba(51,179,199,1) 82%);
-}
+    background: rgb(39,134,131);
+    background: radial-gradient(circle, rgba(39,134,131,1) 15%, rgba(51,200,195,1) 20%, rgba(28,117,115,1) 43%, rgba(25,177,180,1) 61%, rgba(17,108,121,1) 82%);}
 
 header {
     margin-top: 2em;
