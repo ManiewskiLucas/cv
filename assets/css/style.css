@@ -8,14 +8,42 @@ body {
 header {
     margin-top: 2em;
     color: white;
+    background-image: linear-gradient(to left, #03045e, #00b4d8, #03045e, #00b4d8, #03045e);
 
 
 }
 
-header img {
-    width: 25%;
-    height: 150px;
+img {
+    width: 100%;
+    height: 200px;
+    opacity: .4;
     object-fit: cover;
+
+}
+
+.haut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+}
+
+.haut p{
+    position: absolute;
+    text-align: center;
+    top: 120px;
+    left: 685px;
+
+}
+
+h1 {
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    left: 650px;
+    font-family: 'Lunasima', sans-serif;
+
 }
 
 .cv {
@@ -23,6 +51,11 @@ header img {
     gap: 5em;
 }
 
+h2 {
+    text-align: center;
+    font-family: 'Lunasima', sans-serif;
+
+}
 
 main {
     display:flex;
@@ -51,12 +84,6 @@ article {
     
 }
 
-
-h1, h2, h3, h4 {
-    font-family: 'Lunasima', sans-serif;
-
-}
-
 footer, a, summary {
     font-family: 'Mooli', sans-serif;
 
@@ -71,9 +98,6 @@ p {
 
 }
 
-
-
-
 h3, h4{
     text-align: center;
     margin:auto;
@@ -82,10 +106,11 @@ h3, h4{
     display: flex;
     justify-content: center ;
     align-items: center;
+    font-family: 'Lunasima', sans-serif;
+
 
 
 }
-
 
 summary {
     text-align: center;
@@ -96,9 +121,16 @@ summary {
 
 }
 
-
-
 .fa-angle-down {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
+    
+}
+  
+details[open] summary i {
+    rotate: -90deg;
+    transition: 0.3s;
+}
 
+details:not([open]) summary i {
+    transition: 0.3s;
 }
