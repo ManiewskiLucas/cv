@@ -8,6 +8,8 @@ body {
     font-family: 'Mooli', sans-serif;
 }
 
+
+
 hr {
     height: 2px;
     border: none;
@@ -76,6 +78,7 @@ main {
 .phraseDePresentation {
     margin: 1em 2em;
     font-size: 22px;
+    text-align: center;
 }
 
 article {
@@ -156,3 +159,7 @@ footer i {
     color: #0a0a44;
     font-size: 24px;
 }
+
+
+
+
