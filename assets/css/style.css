@@ -1,61 +1,69 @@
 body {
     width: 90em;
     margin: auto;
-    background: rgb(39,134,131);
-    background: radial-gradient(circle, rgba(39,134,131,1) 15%, rgba(51,200,195,1) 20%, rgba(28,117,115,1) 43%, rgba(25,177,180,1) 61%, rgba(17,108,121,1) 82%);}
+    background-image: linear-gradient(to left, #0a0a44, #11849c, #0a0a44, #11849c, #0a0a44);
+    font-family: 'Mooli', sans-serif;
+}
 
+/*_________________*/
+/* HEADER */
 header {
     margin-top: 2em;
     color: white;
-    background-image: linear-gradient(to left, #03045e, #00b4d8, #03045e, #00b4d8, #03045e);
-
-
 }
 
-img {
-    width: 100%;
-    height: 200px;
-    opacity: .4;
-    object-fit: cover;
-
-}
 
 .haut {
     display: flex;
+    position: absolute;
     justify-content: center;
     align-items: center;
-    position: absolute;
-
-}
-
-.haut p{
-    position: absolute;
-    text-align: center;
-    top: 120px;
-    left: 685px;
-
-}
-
-h1 {
-    position: absolute;
-    text-align: center;
-    top: 0px;
-    left: 650px;
-    font-family: 'Lunasima', sans-serif;
 
 }
 
 .cv {
-    display: flex;
-    gap: 5em;
+    position: relative;
+    text-align: center;
+    border: white 2px solid;
+}
+
+.cv img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+
+.cv h1 {
+    font-family: 'Lunasima', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 52px;
+
 }
 
 h2 {
     text-align: center;
     font-family: 'Lunasima', sans-serif;
+    font-size: 32px ;
+    color: white;
+}
+
+hr {
+    height: 2px;
+    border: none;
+    background-color: white;
+    margin-bottom: 10px;
 
 }
 
+
+/*_________________*/
+/* MAIN */
 main {
     display:flex;
     width: 100%;
@@ -65,37 +73,9 @@ main {
 
 article {
     width: 50%;
-    background-color: #8ecae6;
-    
-
+    background-color: #edf6fb;
 }
 
-.contact {
-    display: flex;
-    justify-content: center;
-
-}
-
-.liencontact {
-    display: flex;
-    gap: 1em;
-    align-items: center;
-    
-}
-
-footer, a, summary {
-    font-family: 'Mooli', sans-serif;
-
-}
-
-p {
-    margin-top: 10px;
-    text-align: center;
-    font-family: 'Mooli', sans-serif;
-    font-style: italic;
-
-
-}
 
 h3, h4{
     text-align: center;
@@ -106,9 +86,6 @@ h3, h4{
     justify-content: center ;
     align-items: center;
     font-family: 'Lunasima', sans-serif;
-
-
-
 }
 
 summary {
@@ -117,12 +94,10 @@ summary {
     margin-top: 25px;
     margin-bottom: 25px;
     list-style-type: none;
-
 }
 
 .fa-angle-down {
     transform: rotate(90deg);
-    
 }
   
 details[open] summary i {
@@ -132,4 +107,41 @@ details[open] summary i {
 
 details:not([open]) summary i {
     transition: 0.3s;
+}
+
+
+/*_________________*/
+/* FOOTER */
+
+footer {
+    margin-bottom: 2em;
+}
+
+.contact {
+    background-color: #edf6fb;
+    display: flex;
+    gap: 3em;
+}
+
+.contactLien {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.appelAcontact {
+    padding: 2em;
+}
+
+
+.liencontact {
+    width: 40%;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+footer i {
+    color: #0a0a44;
+    font-size: 24px;
 }
