@@ -113,12 +113,13 @@ summary {
 details[open] summary i {
     rotate: 180deg;
     transition: 0.3s;
+  
 }
 
 details:not([open]) summary i {
     transition: 0.3s;
+  
 }
-
 
 /*_________________*/
 /* FOOTER */
