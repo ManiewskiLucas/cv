@@ -1,8 +1,18 @@
+/*_________________*/
+/* GÉNÉRAL */
+
 body {
     width: 90em;
     margin: auto;
     background-image: linear-gradient(to left, #0a0a44, #11849c, #0a0a44, #11849c, #0a0a44);
     font-family: 'Mooli', sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: none;
+    background-color: white;
+    margin: 10px 0px;
 }
 
 /*_________________*/
@@ -53,14 +63,6 @@ h2 {
     color: white;
 }
 
-hr {
-    height: 2px;
-    border: none;
-    background-color: white;
-    margin-bottom: 10px;
-
-}
-
 
 /*_________________*/
 /* MAIN */
@@ -68,40 +70,48 @@ main {
     display:flex;
     width: 100%;
     flex-wrap: wrap;
+    background-color: #edf6fb;
+}
 
+.phraseDePresentation {
+    margin: 1em 2em;
+    font-size: 22px;
 }
 
 article {
     width: 50%;
-    background-color: #edf6fb;
 }
 
 
-h3, h4{
+h3{
     text-align: center;
     margin:auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: center ;
-    align-items: center;
     font-family: 'Lunasima', sans-serif;
+    font-size: 28px;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    max-width: 95%;
+    margin: 1em 0em 2em 0em;
+}
+
+article p, article h4 {
+    margin-left: 4em;
 }
 
 summary {
-    text-align: center;
-    margin:auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    font-size: 22px;
     list-style-type: none;
+    margin: 1em;
+    cursor: pointer;
 }
 
 .fa-angle-down {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
+    margin-right: 1em;
 }
   
 details[open] summary i {
-    rotate: -90deg;
+    rotate: 180deg;
     transition: 0.3s;
 }
 
