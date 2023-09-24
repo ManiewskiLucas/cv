@@ -22,13 +22,6 @@ header {
     color: white;
 }
 
-.haut {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-
-}
 
 .cv {
     position: relative;
