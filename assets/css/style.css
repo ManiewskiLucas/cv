@@ -2,7 +2,7 @@
 /* GÉNÉRAL */
 
 body {
-    width: 90em;
+    width: 90%;
     margin: auto;
     background-image: linear-gradient(to left, #0a0a44, #11849c, #0a0a44, #11849c, #0a0a44);
     font-family: 'Mooli', sans-serif;
@@ -81,7 +81,7 @@ h3{
     border-bottom: 2px solid black;
     padding-bottom: 5px;
     max-width: 95%;
-    margin: 1em 0em 2em 0em;
+    margin: 1em 0em 2em 0.6em;
 }
 
 article p, article h4 {

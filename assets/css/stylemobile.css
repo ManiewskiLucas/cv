@@ -2,7 +2,7 @@
 
     
     body {
-        width: 90%;
+        width: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -17,7 +17,7 @@
     }
 
 .phraseDePresentation {
-                font-size: 16px;
+        font-size: 16px;
 
 }
 
@@ -37,8 +37,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
-
     }
 
     details {
@@ -49,8 +47,6 @@
 
     details p {
         margin: 0em;
-
-
     }
 
     main {
@@ -58,15 +54,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
-
     }
 
 
 
     .appelAcontact {
         padding: 1em;
-
     }
 
 
@@ -86,7 +79,7 @@
 
     .liencontact {
         width: 85%;
-        margin-left: ;
+        
     }
 
 
