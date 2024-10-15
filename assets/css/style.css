@@ -61,6 +61,7 @@ main {
     width: 100%;
     flex-wrap: wrap;
     background-color: #edf6fb;
+    justify-content: center;
 }
 
 .phraseDePresentation {
