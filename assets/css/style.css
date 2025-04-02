@@ -88,13 +88,24 @@ h3{
 
 article p, article h4 {
     margin-left: 4em;
+    margin-right: 4em;
 }
 
-summary {
+.summary {
     font-size: 22px;
     list-style-type: none;
     margin: 1em;
     cursor: pointer;
+}
+
+.tools {
+    display: flex;
+    margin-left: 1.5em;
+}
+
+.tools ul {
+    list-style-type: none;
+    margin-top: 0;
 }
 
 .fa-angle-down {
