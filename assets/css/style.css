@@ -87,39 +87,20 @@ h3{
 }
 
 article p, article h4 {
-    margin-left: 4em;
-    margin-right: 4em;
+    margin-left: 1.5rem;
 }
 
-.summary {
-    font-size: 22px;
+h4 {
+    margin-top: 2rem;
+}
+
+ul {
     list-style-type: none;
-    margin: 1em;
-    cursor: pointer;
 }
 
 .tools {
     display: flex;
-    margin-left: 1.5em;
-}
-
-.tools ul {
-    list-style-type: none;
-    margin-top: 0;
-}
-
-.fa-angle-down {
-    transform: rotate(180deg);
-    margin-right: 1em;
-}
-  
-details[open] summary i {
-    rotate: 180deg;
-    transition: 0.3s;
-}
-
-details:not([open]) summary i {
-    transition: 0.3s;
+    gap: 4rem;
 }
 
 /*_________________*/
@@ -145,14 +126,31 @@ footer {
     padding: 2em;
 }
 
+.appelAcontact i {
+    margin-right: 1rem;
+}
+
 .liencontact {
     width: 40%;
     display: flex;
-    gap: 1em;
     align-items: center;
+    margin: 1rem;
+    gap: 1rem;
 }
 
 footer i {
     color: #0a0a44;
     font-size: 24px;
+}
+
+footer article {
+    background: #edf6fb;
+    position: fixed;
+    z-index: 1000;
+    bottom: 20px;
+    right: 20px;
+    width: auto;
+    padding: 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
