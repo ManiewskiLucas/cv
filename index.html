@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr" style="scroll-behavior: smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CV de Lucas Maniewski, Développeur web" />
+    <meta
+      name="keywords"
+      content="développeur web, développeur mobile, HTML, CSS, JavaScript, SQL, Java, Bootstrap, Tailwind, Vue.js, Nuxt.js"
+    />
+    <title>CV Lucas Maniewski | Développeur Web</title>
+    <link rel="icon" href="assets/fichiers/logo.webp" type="image/webp" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload police -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Lunasima&family=Mooli&display=swap"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lunasima&family=Mooli&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/d05fc3ff1d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-200 font-[Mooli]">
+    <!-- Bouton hamburger fixe -->
+    <button
+      id="menu-toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="menu-drawer"
+      class="fixed top-4 left-4 z-40 p-3 rounded-md bg-blue-500 text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+    >
+      <i class="fas fa-bars text-lg"></i>
+    </button>
+
+    <!-- Drawer menu -->
+    <nav
+      id="menu-drawer"
+      class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-40"
+      aria-label="Menu principal"
+      aria-hidden="true"
+      role="dialog"
+    >
+      <div class="flex justify-between items-center p-4 border-b">
+        <h2 class="text-xl font-semibold">Navigation</h2>
+        <button
+          id="menu-close"
+          aria-label="Fermer le menu"
+          class="p-2 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <ul class="flex flex-col p-4 space-y-4 text-blue-700 font-medium">
+        <li>
+          <a
+          href="#experiences"
+          class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+          >Expériences</a
+          >
+        </li>
+        <li>
+          <a
+            href="#formation"
+            class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+            >Formation</a
+          >
+        </li>
+        <li>
+          <a
+            href="#competences"
+            class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+            >Compétences</a
+          >
+        </li>
+        <li>
+          <a
+            href="#atouts"
+            class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+            >Atouts</a
+          >
+        </li>
+        <li>
+          <a
+            href="#interets"
+            class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+            >Centres d'intérêt</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Fond semi-transparent quand menu ouvert -->
+    <div
+      id="backdrop"
+      class="fixed inset-0 bg-black bg-opacity-40 hidden z-30"
+      tabindex="-1"
+      ></div>
+      
+    <header
+      class="bg-gradient-to-r from-blue-600 to-indigo-600 py-10 text-white text-center"
+    >
+      <img
+        src="assets/fichiers/logo.webp"
+        alt="Image représentant du code informatique"
+        class="w-32 h-32 rounded-full mx-auto mb-4"
+        />
+        <h1 class="text-4xl font-bold">Lucas Maniewski</h1>
+        <h2 class="text-2xl">Développeur Web en micro-entreprise </h2>
+        <p class="text-xl mt-4">
+          Développeur front-end <br />
+          Vue.js & Nuxt
+        </p>
+    </header>
+    
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-10">
+      <!-- Expériences -->
+      <section id="experiences">
+        <h3 class="text-2xl font-bold text-blue-700 mb-4">
+          <i class="fas fa-briefcase me-2"></i> Expériences professionnelles
+        </h3>
+        <div class="space-y-6">
+          <div class="bg-white p-6 shadow rounded">
+            <h4 class="text-xl font-semibold"> Développeur web : EI - MANIEWSKI Lucas (Micro-Entreprise)</h4>
+            <p class="text-gray-600">
+              <i class="far fa-calendar-alt text-blue-600 me-2 mt-2"></i>De
+              décembre 2025 à aujourd'hui
+            </p>
+            <ul class="list-disc list-inside text-gray-700 flex flex-col mt-5 gap-3">
+              <li>
+                J’accompagne les commerces de proximité (restaurateurs, artisans, coiffeurs, 
+                indépendants) à créer une vitrine digitale moderne, visible sur Google et 
+                pensée pour transformer des visiteurs en clients.
+              </li>
+              <li>
+                Ce que je propose : <br> 
+                - Un site vitrine professionnel, responsive et optimisé pour le référencement local. <br>
+                - Un accompagnement structuré de A à Z (audit, design, développement, mise en ligne, suivi). <br>
+                - Un délai clair : 30 à 45 jours, avec révisions encadrées et support post-livraison. <br>
+                - Objectif : vous aider à booster votre visibilité locale sans dépendre des réseaux sociaux ou des plateformes figées.
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 shadow rounded">
+            <h4 class="text-xl font-semibold">
+              Développeur web chez UA Consulting
+            </h4>
+            <p class="text-gray-600">
+              <i class="far fa-calendar-alt text-blue-600 me-2 mt-2"></i>De
+              septembre à décembre 2024
+            </p>
+            <p class="mt-5">
+              Conception d'un site pour Alexandre Urbanski avec Nuxt et Tailwind
+              :
+            </p>
+            <ul
+              class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
+            >
+              <li>Création de maquettes Figma (Wireframe, tablette, mobile)</li>
+              <li>Intégration des maquettes Figma en composants Vue.js</li>
+              <li>
+                Optimisation des composants pour améliorer le rendu côté serveur
+                (SSR) avec Nuxt
+              </li>
+              <li>
+                Mise en place de bonnes pratiques CSS avec Tailwind en suivant
+                la méthode BEM
+              </li>
+              <li>
+                Structuration claire et maintenable du code JavaScript pour
+                chaque composant
+              </li>
+            </ul>
+            <p class="mt-8">
+              Conception d'un site To-do list avec Vue.js et Tailwind CSS :
+            </p>
+            <ul
+              class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
+            >
+              <li>
+                Initialisation du projet avec Vite et configuration de Vue 3 et
+                Tailwind
+              </li>
+              <li>
+                Création de composants Vue réutilisables (chargement de page,
+                tags et tâches.)
+              </li>
+              <li>
+                Gestion des états de tâche (à faire, en cours, terminée) via
+                computed
+              </li>
+              <li>
+                Ajout de filtres dynamiques pour trier les tâches par tags
+              </li>
+              <li>
+                Utilisation de v-model, v-for, v-if, emit pour structurer les
+                interactions
+              </li>
+              <li>
+                Structuration responsive avec Tailwind : design propre sur
+                mobile et desktop
+              </li>
+              <li>
+                Enregistrement des tâches en local avec localStorage pour garder
+                les données
+              </li>
+              <li>
+                Application des bonnes pratiques de nommage et d’organisation du
+                code
+              </li>
+              <li>
+                Débogage et tests manuels pour assurer le bon fonctionnement
+                globalConception
+              </li>
+            </ul>
+            <a
+              href="https://www.alexandre-urbanski.fr/"
+              target="_blank"
+              class="text-blue-600 hover:underline"
+              ><i class="fas fa-link mt-5"></i> Le site d'Alexandre Urbanski</a
+            >
+          </div>
+          <div class="bg-white p-6 shadow rounded">
+            <h4 class="text-xl font-semibold">
+              Développeur web chez Alizaryana
+            </h4>
+            <p class="text-gray-600">
+              <i class="far fa-calendar-alt text-blue-600 me-2 mt-2"></i>Du 11
+              au 22 septembre 2023
+            </p>
+            <ul
+              class="list-disc list-inside text-gray-700 flex flex-col mt-5 gap-3"
+            >
+              <li>
+                Veille sur les bonnes pratiques HTML/CSS et exploration des
+                outils GitHub et CodePen
+              </li>
+              <li>
+                Exercices pratiques pour maîtriser Flexbox et la mise en page
+                flexible en CSS
+              </li>
+              <li>
+                Conception d’un CV web en HTML et CSS avec mise en page via
+                Flexbox (ancien CV)
+              </li>
+              <li>
+                Personnalisation de dégradés de couleur à l’aide de l’outil
+                cssgradient.io
+              </li>
+              <li>
+                Adaptation responsive du CV pour mobile et tablette avec les
+                media queries
+              </li>
+            </ul>
+            <a
+              href="https://alizaryana.com/"
+              target="_blank"
+              class="text-blue-600 hover:underline"
+              ><i class="fas fa-link mt-5"></i> Le site Alizaryana</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Formation -->
+      <section id="formation">
+        <h3 class="text-2xl font-bold text-blue-700 mb-4">
+          <i class="fas fa-graduation-cap me-2"></i> Diplômes et formations
+        </h3>
+        <div class="bg-white p-6 shadow rounded">
+          <h4 class="text-xl font-semibold">
+            Titre professionnel, développeur web et web mobile
+          </h4>
+          <p class="text-gray-600">
+            <i class="far fa-calendar-alt me-2"></i>Du 21 mai 2024 au 07 février
+            2025
+          </p>
+          <p class="mt-5">Front-end :</p>
+          <ul
+            class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
+          >
+            <li>
+              Conception de maquettes web avec Figma (desktop, tablette, mobile)
+            </li>
+            <li>Intégration HTML/CSS accessible et responsive</li>
+            <li>Apprentissage de Bootstrap</li>
+            <li>Flexbox et media queries</li>
+            <li>
+              Exercices pratiques sur les bases du langage JavaScript (DOM,
+              événements, fonctions)
+            </li>
+          </ul>
+          <p class="mt-5">Base de données :</p>
+          <ul
+            class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
+          >
+            <li>Modélisation MCD/MLD/MPD avec Looping et Draw.io</li>
+            <li>Création de base de données sur MySQL Workbench en SQL</li>
+          </ul>
+          <p class="mt-5">Back-end :</p>
+          <ul
+            class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
+          >
+            <li>
+              Développement de sites e-commerce dynamiques en Java (Eclipse)
+            </li>
+            <li>Vues JSP</li>
+            <li>Architecture MVC</li>
+            <li>Classes Java</li>
+            <li>
+              Mise en œuvre de la couche DAO pour gérer les opérations CRUD
+              (Create, Read, Update, Delete)
+            </li>
+            <li>Liaison MySQL</li>
+            <li>Hachage SHA-1</li>
+            <li>Intégration Stripe</li>
+          </ul>
+          <p class="mt-5">Projet final :</p>
+          <ul
+            class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
+          >
+            <li>Site e-commerce complet présenté au jury</li>
+            <li>Front-end avec JSP/HTML/CSS</li>
+            <li>Back-end Java avec DAO et Servlets</li>
+            <li>Base de données connectée</li>
+          </ul>
+          <ul
+            class="list-disc list-inside text-gray-700 flex flex-col mt-8 gap-3"
+          >
+            <li>
+              Découverte de Unity 3D (expérience limitée à cause des contraintes
+              matérielles)
+            </li>
+            <li>Initiation au CMS WordPress sans approfondissement</li>
+          </ul>
+          <p>
+            <a
+              href="https://tinyurl.com/yc7m4n4h"
+              target="_blank"
+              class="text-blue-600 hover:underline"
+            >
+              <i class="fas fa-map-marker-alt me-2 mt-5"></i>30 Rue de Chanzy,
+              71200 Le Creusot
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Compétences -->
+      <section id="competences">
+        <h3 class="text-2xl font-bold text-blue-700 mb-4">
+          <i class="fas fa-code me-2"></i> Compétences
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="text-lg font-semibold">
+              <i class="fab fa-java"></i> Java
+            </h4>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Maîtrise de l'architecture MVC</li>
+              <li>Connexion à la base de données</li>
+              <li>DAO, classes, Servlets</li>
+            </ul>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="text-lg font-semibold">
+              <i class="fas fa-database"></i> SQL
+            </h4>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>CRUD sur les tables</li>
+              <li>Colonnes : ajout, modification, suppression</li>
+              <li>Insertion de lignes</li>
+            </ul>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="text-lg font-semibold">
+              <i class="fab fa-js"></i> JavaScript
+            </h4>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Variables, fonctions, conditions, boucles, tableaux</li>
+            </ul>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="text-lg font-semibold">
+              <i class="fab fa-css3-alt"></i> CSS
+            </h4>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Sélecteurs : :hover, :focus, :nth-child.</li>
+              <li>Modèle boîte : padding, margin, border-box.</li>
+              <li>Flexbox : justify-content, align-items.</li>
+              <li>Grid : grid-template-areas, minmax().</li>
+              <li>Animations : @keyframes, transitions.</li>
+              <li>Responsive : media queries, clamp(), vw.</li>
+              <li>Variables : :root, var(--color) thèmes.</li>
+            </ul>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="text-lg font-semibold">
+              <i class="fab fa-html5"></i> HTML
+            </h4>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Normes : Maîtrise HTML5, éléments sémantiques.</li>
+              <li>Accessibilité : Attributs ARIA, normes WCAG.</li>
+              <li>Formulaires : Validation native, inputs multimédias.</li>
+              <li>Multimédia : Intégration audio, video.</li>
+              <li>Responsive : Meta viewport, media queries CSS.</li>
+              <li>Sécurité : Évitement injections, optimisation perf.</li>
+              <li>Outils : Bootstrap pour grids HTML.</li>
+            </ul>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="text-lg font-semibold">
+              <i class="fas fa-tools"></i> Outils
+            </h4>
+            <div class="grid grid-cols-2 gap-x-4 text-gray-700">
+              <ul class="list-disc list-inside">
+                <li>GitHub</li>
+                <li>Trello</li>
+                <li>Figma</li>
+                <li>Looping</li>
+                <li>draw.io</li>
+              </ul>
+              <ul class="list-disc list-inside">
+                <li>VS Code</li>
+                <li>MySQL Workbench</li>
+                <li>Apache NetBeans</li>
+                <li>Eclipse</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Atouts -->
+      <section id="atouts">
+        <h3 class="text-2xl font-bold text-blue-700 mb-4">
+          <i class="fas fa-star"></i> Atouts
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold">
+              <i class="fas fa-user"></i> Qualités personnelles
+            </h4>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Rigueur</li>
+              <li>Précision</li>
+              <li>Inventivité</li>
+              <li>Patience</li>
+            </ul>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold">
+              <i class="fas fa-users"></i> Compétences transversales
+            </h4>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Travail en équipe</li>
+              <li>Autonomie</li>
+              <li>Organisation</li>
+              <li>Adaptabilité</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Centres d'intérêt -->
+      <section id="interets">
+        <h3 class="text-2xl font-bold text-blue-700 mb-4">
+          <i class="fas fa-heart"></i> Centres d'intérêt
+        </h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold"><i class="fas fa-tv"></i> Anime</h4>
+            <p>One Piece, My Hero Academia, Demon Slayer</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold">
+              <i class="fas fa-edit"></i> Contribution en ligne
+            </h4>
+            <p>Édition de wikis Fandom (My Hero Academia & Demon Slayer)</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold">
+              <i class="fas fa-gamepad"></i> Création de contenu
+            </h4>
+            <p>Création de maps Hello Neighbor via Hello Mod Kit</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-8"
+      id="contact"
+    >
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+          <div class="flex items-center gap-2">
+            <i class="fas fa-globe"></i>
+            <a href="https://lucas-maniewski.fr" target="_blank" rel="noopener noreferrer">Mon site web</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:lucas.maniewski@orange.fr" class="hover:underline"
+              >lucas.maniewski@orange.fr</a
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+33784566120" class="hover:underline"
+              >07 84 56 61 20</a
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fab fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/lucas-maniewski-1a80151b0/"
+              target="_blank"
+              class="hover:underline"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fas fa-map-marker-alt"></i>
+            <a
+              href="https://www.google.com/maps/place/71670+Saint-Pierre-de-Varennes/"
+              target="_blank"
+              class="hover:underline"
+              >Saint Pierre de Varennes</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Bouton qui déclenche le modal -->
+      <button
+        id="cv-actions-btn"
+        class="fixed bottom-4 right-4 mt-6 mx-auto block bg-blue-500 hover:bg-indigo-700 text-white text-sm font-medium py-2 px-4 rounded shadow transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
+        aria-label="Ouvrir les actions de CV"
+      >
+        <i class="fas fa-print mr-2" aria-hidden="true"></i> Télécharger /
+        imprimer le CV
+      </button>
+      <button
+        id="btn-back-to-top"
+        class="hidden fixed bottom-20 right-4 bg-blue-500 hover:bg-blue-700 text-white rounded-full p-3 shadow-md"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </footer>
+
+    <!-- Modal pour télécharger/imprimer (initialement masqué) -->
+    <div
+      id="cvActionsModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50"
+      role="dialog"
+      aria-labelledby="cvActionsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="bg-white rounded-lg shadow-lg w-full max-w-md mx-4">
+        <!-- Header -->
+        <div class="flex justify-between items-center border-b p-4">
+          <h5
+            class="text-lg font-semibold text-gray-800"
+            id="cvActionsModalLabel"
+          >
+            Souhaitez-vous ?
+          </h5>
+          <button
+            type="button"
+            id="closeModalBtn"
+            class="text-gray-500 hover:text-gray-700"
+            aria-label="Fermer"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Body -->
+        <div class="p-4 space-y-4">
+          <button
+            type="button"
+            class="w-full bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 flex items-center justify-center gap-2"
+            id="downloadCV"
+          >
+            <i class="fas fa-download"></i>Télécharger
+          </button>
+          <button
+            type="button"
+            class="w-full bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700 flex items-center justify-center gap-2"
+            id="printCV"
+          >
+            <i class="fas fa-print"></i>Imprimer
+          </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="flex justify-end border-t p-4">
+          <button
+            type="button"
+            class="text-gray-600 hover:text-gray-800"
+            id="cancelModalBtn"
+          >
+            Annuler
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ton script JS externe -->
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/menu.js" defer></script>
+  </body>
+</html>
