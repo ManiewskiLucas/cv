@@ -1,49 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggleBtn = document.getElementById("menu-toggle");
-  const menuCloseBtn = document.getElementById("menu-close");
-  const menuDrawer = document.getElementById("menu-drawer");
-  const backdrop = document.getElementById("backdrop");
-  const menuLinks = menuDrawer.querySelectorAll("a");
+  const menuCloseBtn  = document.getElementById("menu-close");
+  const menuDrawer    = document.getElementById("menu-drawer");
+  const backdrop      = document.getElementById("backdrop");
+  const menuLinks     = menuDrawer.querySelectorAll(".drawer-link");
 
-  const classHidden = "-translate-x-full";
-  const backdropHidden = "hidden";
-
-  // === Ouvrir le menu ===
+  // ── Ouvrir ──
   const openMenu = () => {
-    menuDrawer.classList.remove(classHidden);
+    menuDrawer.classList.remove("-translate-x-full");
+    menuDrawer.removeAttribute("inert");
     menuDrawer.setAttribute("aria-hidden", "false");
     menuToggleBtn.setAttribute("aria-expanded", "true");
-    backdrop.classList.remove(backdropHidden);
+    backdrop.classList.remove("hidden");
     document.body.classList.add("overflow-hidden");
-
-    // Focus premier lien
     if (menuLinks.length > 0) menuLinks[0].focus();
   };
 
-  // === Fermer le menu ===
+  // ── Fermer ──
   const closeMenu = () => {
-    menuDrawer.classList.add(classHidden);
+    menuDrawer.classList.add("-translate-x-full");
+    menuDrawer.setAttribute("inert", "");
     menuDrawer.setAttribute("aria-hidden", "true");
     menuToggleBtn.setAttribute("aria-expanded", "false");
-    backdrop.classList.add(backdropHidden);
+    backdrop.classList.add("hidden");
     document.body.classList.remove("overflow-hidden");
-
-    // Focus retour sur le bouton
     menuToggleBtn.focus();
   };
 
-  // === Gestion événements ===
+  // ── Événements ──
   menuToggleBtn.addEventListener("click", openMenu);
   menuCloseBtn.addEventListener("click", closeMenu);
   backdrop.addEventListener("click", closeMenu);
 
-  // Fermeture avec Escape
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !menuDrawer.classList.contains(classHidden)) {
+    if (e.key === "Escape" && !menuDrawer.classList.contains("-translate-x-full")) {
       closeMenu();
     }
   });
 
-  // Fermer quand un lien est cliqué
   menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
 });

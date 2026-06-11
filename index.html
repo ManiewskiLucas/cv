@@ -1,633 +1,753 @@
 <!DOCTYPE html>
-<html lang="fr" style="scroll-behavior: smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="CV de Lucas Maniewski, Développeur web" />
-    <meta
-      name="keywords"
-      content="développeur web, développeur mobile, HTML, CSS, JavaScript, SQL, Java, Bootstrap, Tailwind, Vue.js, Nuxt.js"
-    />
-    <title>CV Lucas Maniewski | Développeur Web</title>
-    <link rel="icon" href="assets/fichiers/logo.webp" type="image/webp" />
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lucas Maniewski - Développeur web front-end indépendant. Sites vitrines, landing pages et applications web pour artisans, commerçants et associations." />
+  <meta name="keywords" content="développeur web indépendant, site vitrine, freelance, HTML, CSS, JavaScript, Vue.js, Nuxt, Tailwind, Bourgogne, Le Creusot" />
+  <title>Lucas Maniewski - Développeur Web</title>
+  <link rel="icon" href="assets/fichiers/logo.webp" type="image/webp" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Preload police -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Lunasima&family=Mooli&display=swap"
-    />
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/d05fc3ff1d.js" crossorigin="anonymous"></script>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lunasima&family=Mooli&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            ink:   '#0f1117',
+            card:  '#181c27',
+            edge:  '#242838',
+            muted: '#8b92a8',
+            accent:'#4f8ef7',
+            glow:  '#6ea8fb',
+          }
+        }
+      }
+    }
+  </script>
 
-    <script
-      src="https://kit.fontawesome.com/d05fc3ff1d.js"
-      crossorigin="anonymous"
-    ></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #0f1117; color: #e2e6f0; font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; }
 
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-200 font-[Mooli]">
-    <!-- Bouton hamburger fixe -->
-    <button
-      id="menu-toggle"
-      aria-label="Ouvrir le menu"
-      aria-expanded="false"
-      aria-controls="menu-drawer"
-      class="fixed top-4 left-4 z-40 p-3 rounded-md bg-blue-500 text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-    >
-      <i class="fas fa-bars text-lg"></i>
-    </button>
+    /* ── Focus visible global ── */
+    :focus-visible { outline: 2px solid #4f8ef7; outline-offset: 3px; border-radius: 4px; }
 
-    <!-- Drawer menu -->
-    <nav
-      id="menu-drawer"
-      class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-40"
-      aria-label="Menu principal"
-      aria-hidden="true"
-      role="dialog"
-    >
-      <div class="flex justify-between items-center p-4 border-b">
-        <h2 class="text-xl font-semibold">Navigation</h2>
-        <button
-          id="menu-close"
-          aria-label="Fermer le menu"
-          class="p-2 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        >
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
+    /* ── Timeline ── */
+    .timeline-item { position: relative; padding-left: 2rem; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #4f8ef7 0%, #242838 100%);
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -5px; top: 6px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: #4f8ef7;
+      box-shadow: 0 0 0 3px #0f1117, 0 0 0 5px #4f8ef750;
+    }
 
-      <ul class="flex flex-col p-4 space-y-4 text-blue-700 font-medium">
-        <li>
-          <a
-          href="#experiences"
-          class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
-          >Expériences</a
-          >
-        </li>
-        <li>
-          <a
-            href="#formation"
-            class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
-            >Formation</a
-          >
-        </li>
-        <li>
-          <a
-            href="#competences"
-            class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
-            >Compétences</a
-          >
-        </li>
-        <li>
-          <a
-            href="#atouts"
-            class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
-            >Atouts</a
-          >
-        </li>
-        <li>
-          <a
-            href="#interets"
-            class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
-            >Centres d'intérêt</a
-          >
-        </li>
-        <li>
-          <a
-            href="#contact"
-            class="hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </nav>
+    /* ── Badges techno ── */
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      background: #1e2538;
+      color: #8b92a8;
+      border: 1px solid #2d3347;
+      margin: 2px;
+    }
+    .badge-accent {
+      background: #1a2a4a;
+      color: #6ea8fb;
+      border-color: #2d4a80;
+    }
 
-    <!-- Fond semi-transparent quand menu ouvert -->
-    <div
-      id="backdrop"
-      class="fixed inset-0 bg-black bg-opacity-40 hidden z-30"
-      tabindex="-1"
-      ></div>
-      
-    <header
-      class="bg-gradient-to-r from-blue-600 to-indigo-600 py-10 text-white text-center"
-    >
+    /* ── Cards ── */
+    .card {
+      background: #181c27;
+      border: 1px solid #242838;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .card:hover {
+      border-color: #2d3a5c;
+      transition: border-color 0.2s ease;
+    }
+
+    /* ── Section header ── */
+    .section-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #e2e6f0;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .section-title .icon-dot {
+      width: 6px; height: 6px;
+      background: #4f8ef7;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Drawer ── */
+    #menu-drawer {
+      background: #181c27;
+      border-right: 1px solid #242838;
+    }
+
+    /* ── Skill bar ── */
+    .skill-bar-bg { background: #242838; border-radius: 999px; height: 4px; }
+    .skill-bar-fill { height: 4px; border-radius: 999px; background: linear-gradient(90deg, #4f8ef7, #6ea8fb); }
+
+    /* ── Header signature line ── */
+    .header-line {
+      width: 48px; height: 3px;
+      background: #4f8ef7;
+      border-radius: 2px;
+      margin: 1rem auto;
+    }
+
+    /* Boutons hover (pas d'onmouseover inline) */
+    .cv-pdf-btn { background: #2563eb; transition: background 0.2s; }
+    .cv-pdf-btn:hover { background: #1d4ed8; }
+    .btn-back { background: #242838; transition: background 0.2s; }
+    .btn-back:hover { background: #4f8ef7; }
+    .footer-link { background: #242838; color: #8b92a8; transition: background 0.2s, color 0.2s; }
+    .footer-link:hover { background: #4f8ef7; color: white; }
+    .modal-dl { background: #2563eb; transition: background 0.2s; }
+    .modal-dl:hover { background: #1d4ed8; }
+    .modal-print { background: #2d3347; transition: background 0.2s; }
+    .modal-print:hover { background: #374151; }
+
+    /* ── Print ── */
+    @media print {
+      #menu-toggle, #menu-drawer, #backdrop, #btn-back-to-top, #cv-actions-btn { display: none !important; }
+      body { background: white; color: black; }
+      .card { border: 1px solid #ddd; background: white; }
+    }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BOUTON MENU (z-50 pour rester au-dessus du backdrop, mais drawer z-50 aussi pour le couvrir quand ouvert) -->
+  <button
+    id="menu-toggle"
+    aria-label="Ouvrir le menu de navigation"
+    aria-expanded="false"
+    aria-controls="menu-drawer"
+    class="fixed top-4 left-4 z-50 p-3 rounded-lg text-white shadow-lg transition-colors focus:outline-none"
+    style="background:#4f8ef7"
+  >
+    <i class="fas fa-bars text-base" aria-hidden="true"></i>
+  </button>
+
+  <!-- DRAWER NAVIGATION (z-50 pour couvrir le bouton toggle quand ouvert) -->
+  <nav
+    id="menu-drawer"
+    class="fixed top-0 left-0 h-full w-64 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-50"
+    aria-label="Menu principal"
+    aria-hidden="true"
+    role="dialog"
+    inert
+  >
+    <div class="flex justify-between items-center p-5 border-b border-edge">
+      <span class="font-bold text-base text-white">Navigation</span>
+      <button
+        id="menu-close"
+        aria-label="Fermer le menu"
+        class="p-2 rounded-lg hover:bg-edge transition-colors text-muted hover:text-white"
+      >
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+    <ul class="flex flex-col p-5 space-y-1">
+      <li><a href="#presentation" class="drawer-link block py-2 px-3 rounded-lg text-muted hover:text-white hover:bg-edge transition-colors">Présentation</a></li>
+      <li><a href="#projets"      class="drawer-link block py-2 px-3 rounded-lg text-muted hover:text-white hover:bg-edge transition-colors">Projets</a></li>
+      <li><a href="#experiences"  class="drawer-link block py-2 px-3 rounded-lg text-muted hover:text-white hover:bg-edge transition-colors">Expériences</a></li>
+      <li><a href="#formation"    class="drawer-link block py-2 px-3 rounded-lg text-muted hover:text-white hover:bg-edge transition-colors">Formation</a></li>
+      <li><a href="#competences"  class="drawer-link block py-2 px-3 rounded-lg text-muted hover:text-white hover:bg-edge transition-colors">Compétences</a></li>
+      <li><a href="#atouts"       class="drawer-link block py-2 px-3 rounded-lg text-muted hover:text-white hover:bg-edge transition-colors">Atouts</a></li>
+      <li><a href="#contact"      class="drawer-link block py-2 px-3 rounded-lg text-muted hover:text-white hover:bg-edge transition-colors">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Backdrop -->
+  <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-60 hidden z-30" tabindex="-1"></div>
+
+
+  <!-- ═══════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+  <header class="relative overflow-hidden pt-20 pb-16 text-center px-4" id="presentation">
+    <!-- Fond radial subtil -->
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 80% 50% at 50% 0%, #1a2a4a55 0%, transparent 70%);"></div>
+
+    <div class="relative z-10 max-w-2xl mx-auto">
       <img
         src="assets/fichiers/logo.webp"
-        alt="Image représentant du code informatique"
-        class="w-32 h-32 rounded-full mx-auto mb-4"
-        />
-        <h1 class="text-4xl font-bold">Lucas Maniewski</h1>
-        <h2 class="text-2xl">Développeur Web en micro-entreprise </h2>
-        <p class="text-xl mt-4">
-          Développeur front-end
-        </p>
-    </header>
-    
-    <main class="max-w-5xl mx-auto px-4 py-8 space-y-10">
-      <!-- Expériences -->
-      <section id="experiences">
-        <h3 class="text-2xl font-bold text-blue-700 mb-4">
-          <i class="fas fa-briefcase me-2"></i> Expériences professionnelles
-        </h3>
-        <div class="space-y-6">
-          <div class="bg-white p-6 shadow rounded">
-            <h4 class="text-xl font-semibold"> Développeur web : EI - MANIEWSKI Lucas (Micro-Entreprise)</h4>
-            <p class="text-gray-600">
-              <i class="far fa-calendar-alt text-blue-600 me-2 mt-2"></i>De
-              décembre 2025 à aujourd'hui
-            </p>
-            <ul class="list-disc list-inside text-gray-700 flex flex-col mt-5 gap-3">
-              <li>
-                J’accompagne les commerces de proximité (restaurateurs, artisans, coiffeurs, 
-                indépendants) à créer une vitrine digitale moderne, visible sur Google et 
-                pensée pour transformer des visiteurs en clients.
-              </li>
-              <li>
-                Ce que je propose : <br> 
-                - Un site vitrine professionnel, responsive et optimisé pour le référencement local. <br>
-                - Un accompagnement structuré de A à Z (audit, design, développement, mise en ligne, suivi). <br>
-                - Un délai clair : 30 à 45 jours, avec révisions encadrées et support post-livraison. <br>
-                - Objectif : vous aider à booster votre visibilité locale sans dépendre des réseaux sociaux ou des plateformes figées.
-              </li>
-            </ul>
+        alt="Logo de Lucas Maniewski, développeur web"
+        class="w-24 h-24 rounded-full mx-auto mb-5 ring-2 ring-accent ring-offset-2"
+        style="ring-offset-color:#0f1117"
+        width="96" height="96"
+      />
+      <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight">
+        Lucas Maniewski
+      </h1>
+      <div class="header-line"></div>
+      <p class="text-lg text-muted font-medium mb-6">
+        Développeur web front-end - Micro-entrepreneur
+      </p>
+      <p class="text-base leading-relaxed" style="color:#b0b8cc; max-width:520px; margin:0 auto;">
+        Je construis des sites web rapides, soignés et efficaces pour les artisans, 
+        commerçants, associations et petites structures qui veulent exister en ligne 
+        sans se prendre la tête.
+      </p>
+      <div class="flex flex-wrap justify-center gap-2 mt-7">
+        <span class="badge badge-accent">HTML / CSS</span>
+        <span class="badge badge-accent">JavaScript</span>
+        <span class="badge badge-accent">Vue.js / Nuxt</span>
+        <span class="badge badge-accent">Tailwind CSS</span>
+        <span class="badge badge-accent">Figma</span>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="max-w-4xl mx-auto px-4 pb-16 space-y-16">
+
+    <!-- PROJETS -->
+    <section id="projets">
+      <h2 class="section-title"><span class="icon-dot"></span>Projets</h2>
+
+      <div class="card relative overflow-hidden">
+        <div class="absolute left-0 top-0 bottom-0 w-1 rounded-l-xl" style="background: linear-gradient(to bottom, #4f8ef7, #6ea8fb);"></div>
+        <div class="pl-4">
+
+          <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
+            <div>
+              <h3 class="text-lg font-semibold text-white">
+                Tsukuru <span class="font-normal text-sm ml-1" style="color:#8b92a8;">作る</span>
+              </h3>
+              <p class="text-sm" style="color:#8b92a8;">SaaS de worldbuilding</p>
+            </div>
+            <span class="badge badge-accent text-xs">En ligne</span>
           </div>
-          <div class="bg-white p-6 shadow rounded">
-            <h4 class="text-xl font-semibold">
-              Développeur web chez UA Consulting
-            </h4>
-            <p class="text-gray-600">
-              <i class="far fa-calendar-alt text-blue-600 me-2 mt-2"></i>De
-              septembre à décembre 2024
+
+          <p class="text-sm mb-4" style="color:#b0b8cc;">
+            Application web destinée aux créateurs de manga et webtoon francophones.
+            Tsukuru permet de construire et d'organiser un univers narratif complet :
+            personnages, lieux, organisations et chronologies, tout centralisé et lié entre les fiches.
+            Projet à vocation professionnelle, disponible en accès libre et sur abonnement.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-x-6 gap-y-1 mb-5 text-sm" style="color:#b0b8cc;">
+            <div>- Fiches liées (personnages, lieux, organisations…)</div>
+            <div>- Carte des relations entre fiches</div>
+            <div>- Types de fiches personnalisés</div>
+            <div>- Historique des modifications</div>
+            <div>- Export et import JSON</div>
+            <div>- Export PDF</div>
+            <div>- Traduction japonaise assistée par IA</div>
+            <div>- Recherche globale dans l'univers</div>
+            <div>- Templates de fiches</div>
+            <div>- Collaboration sur les univers</div>
+            <div>- Sauvegarde automatique (toutes les 6h)</div>
+          </div>
+
+          <div class="flex flex-wrap gap-1 mb-4">
+            <span class="badge">Nuxt.js</span>
+            <span class="badge">Vue.js</span>
+            <span class="badge">Laravel</span>
+            <span class="badge">MySQL</span>
+            <span class="badge">Stripe</span>
+            <span class="badge">API Claude</span>
+            <span class="badge">Tailwind CSS</span>
+            <span class="badge">Vercel</span>
+          </div>
+          <a
+            href="https://tsukuru.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm"
+            style="color:#4f8ef7;"
+            aria-label="Voir le site Tsukuru (ouvre dans un nouvel onglet)"
+          >
+            <i class="fas fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+            tsukuru.fr
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         EXPÉRIENCES
+    ══════════════════════════════════════ -->
+    <section id="experiences">
+      <h2 class="section-title"><span class="icon-dot"></span>Expériences professionnelles</h2>
+
+      <div class="space-y-8">
+
+        <!-- EI -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card ml-2">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
+              <h3 class="text-base font-semibold text-white">Développeur web indépendant</h3>
+              <span class="badge badge-accent">Actuellement</span>
+            </div>
+            <p class="text-sm text-muted mb-1">EI - MANIEWSKI Lucas - Micro-entreprise</p>
+            <p class="text-sm text-muted mb-4">
+              <i class="far fa-calendar-alt mr-1" aria-hidden="true"></i>Décembre 2025 - aujourd'hui
             </p>
-            <p class="mt-5">
-              Conception d'un site pour Alexandre Urbanski avec Nuxt et Tailwind
-              :
+            <p class="text-sm mb-4" style="color:#b0b8cc;">
+              J'accompagne artisans, commerçants et associations pour leur créer une présence
+              web professionnelle et visible localement : audit, design Figma, développement,
+              mise en ligne et suivi post-livraison.
             </p>
-            <ul
-              class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
-            >
-              <li>Création de maquettes Figma (Wireframe, tablette, mobile)</li>
-              <li>Intégration des maquettes Figma en composants Vue.js</li>
-              <li>
-                Optimisation des composants pour améliorer le rendu côté serveur
-                (SSR) avec Nuxt
-              </li>
-              <li>
-                Mise en place de bonnes pratiques CSS avec Tailwind en suivant
-                la méthode BEM
-              </li>
-              <li>
-                Structuration claire et maintenable du code JavaScript pour
-                chaque composant
-              </li>
+            <ul class="text-sm space-y-2" style="color:#b0b8cc;">
+              <li>- Sites vitrines responsives, optimisés SEO et accessibles</li>
+              <li>- Accompagnement complet de A à Z, sans jargon inutile</li>
             </ul>
-            <p class="mt-8">
-              Conception d'un site To-do list avec Vue.js et Tailwind CSS :
+            <div class="flex flex-wrap gap-1 mt-4">
+              <span class="badge">HTML / CSS</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">Tailwind</span>
+              <span class="badge">PHP</span>
+              <span class="badge">Figma</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- UA Consulting -->
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:#8b92a8; box-shadow: 0 0 0 3px #0f1117, 0 0 0 5px #8b92a830;"></div>
+          <div class="card ml-2">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
+              <h3 class="text-base font-semibold text-white">Développeur web - UA Consulting</h3>
+            </div>
+            <p class="text-sm text-muted mb-4">
+              <i class="far fa-calendar-alt mr-1" aria-hidden="true"></i>Septembre - décembre 2024
             </p>
-            <ul
-              class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
-            >
-              <li>
-                Initialisation du projet avec Vite et configuration de Vue 3 et
-                Tailwind
-              </li>
-              <li>
-                Création de composants Vue réutilisables (chargement de page,
-                tags et tâches.)
-              </li>
-              <li>
-                Gestion des états de tâche (à faire, en cours, terminée) via
-                computed
-              </li>
-              <li>
-                Ajout de filtres dynamiques pour trier les tâches par tags
-              </li>
-              <li>
-                Utilisation de v-model, v-for, v-if, emit pour structurer les
-                interactions
-              </li>
-              <li>
-                Structuration responsive avec Tailwind : design propre sur
-                mobile et desktop
-              </li>
-              <li>
-                Enregistrement des tâches en local avec localStorage pour garder
-                les données
-              </li>
-              <li>
-                Application des bonnes pratiques de nommage et d’organisation du
-                code
-              </li>
-              <li>
-                Débogage et tests manuels pour assurer le bon fonctionnement
-                globalConception
-              </li>
+
+            <p class="text-sm font-medium text-white mb-2">Site vitrine d'Alexandre Urbanski</p>
+            <ul class="text-sm space-y-1 mb-4" style="color:#b0b8cc;">
+              <li>- Maquettes Figma (desktop, tablette, mobile)</li>
+              <li>- Intégration en composants Vue.js avec Nuxt (SSR)</li>
+              <li>- Structuration CSS Tailwind selon la méthode BEM</li>
             </ul>
+
+            <p class="text-sm font-medium text-white mb-2">Application To-do list</p>
+            <ul class="text-sm space-y-1 mb-4" style="color:#b0b8cc;">
+              <li>- Composants Vue 3 réutilisables, gestion d'état par computed</li>
+              <li>- Filtres dynamiques par tags, persistance localStorage</li>
+              <li>- Design responsive mobile/desktop avec Tailwind</li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1 mb-4">
+              <span class="badge">Vue.js</span>
+              <span class="badge">Nuxt</span>
+              <span class="badge">Tailwind</span>
+              <span class="badge">Figma</span>
+              <span class="badge">Vite</span>
+            </div>
             <a
               href="https://www.alexandre-urbanski.fr/"
               target="_blank"
-              class="text-blue-600 hover:underline"
-              ><i class="fas fa-link mt-5"></i> Le site d'Alexandre Urbanski</a
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-accent text-sm hover:text-glow transition-colors"
+              aria-label="Voir le site d'Alexandre Urbanski (ouvre dans un nouvel onglet)"
             >
+              <i class="fas fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+              alexandre-urbanski.fr
+            </a>
           </div>
-          <div class="bg-white p-6 shadow rounded">
-            <h4 class="text-xl font-semibold">
-              Développeur web chez Alizaryana
-            </h4>
-            <p class="text-gray-600">
-              <i class="far fa-calendar-alt text-blue-600 me-2 mt-2"></i>Du 11
-              au 22 septembre 2023
+        </div>
+
+        <!-- Alizaryana -->
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:#8b92a8; box-shadow: 0 0 0 3px #0f1117, 0 0 0 5px #8b92a830;"></div>
+          <div class="card ml-2">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
+              <h3 class="text-base font-semibold text-white">Développeur web - Alizaryana</h3>
+            </div>
+            <p class="text-sm text-muted mb-4">
+              <i class="far fa-calendar-alt mr-1" aria-hidden="true"></i>11 - 22 septembre 2023
             </p>
-            <ul
-              class="list-disc list-inside text-gray-700 flex flex-col mt-5 gap-3"
-            >
-              <li>
-                Veille sur les bonnes pratiques HTML/CSS et exploration des
-                outils GitHub et CodePen
-              </li>
-              <li>
-                Exercices pratiques pour maîtriser Flexbox et la mise en page
-                flexible en CSS
-              </li>
-              <li>
-                Conception d’un CV web en HTML et CSS avec mise en page via
-                Flexbox (ancien CV)
-              </li>
-              <li>
-                Personnalisation de dégradés de couleur à l’aide de l’outil
-                cssgradient.io
-              </li>
-              <li>
-                Adaptation responsive du CV pour mobile et tablette avec les
-                media queries
-              </li>
+            <ul class="text-sm space-y-1 mb-4" style="color:#b0b8cc;">
+              <li>- Veille sur les bonnes pratiques HTML/CSS, GitHub et CodePen</li>
+              <li>- Maîtrise de Flexbox et mise en page responsive (media queries)</li>
+              <li>- Conception et adaptation d'un CV web pour mobile et tablette</li>
             </ul>
             <a
               href="https://alizaryana.com/"
               target="_blank"
-              class="text-blue-600 hover:underline"
-              ><i class="fas fa-link mt-5"></i> Le site Alizaryana</a
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-accent text-sm hover:text-glow transition-colors"
+              aria-label="Voir le site Alizaryana (ouvre dans un nouvel onglet)"
             >
-          </div>
-        </div>
-      </section>
-
-      <!-- Formation -->
-      <section id="formation">
-        <h3 class="text-2xl font-bold text-blue-700 mb-4">
-          <i class="fas fa-graduation-cap me-2"></i> Diplômes et formations
-        </h3>
-        <div class="bg-white p-6 shadow rounded">
-          <h4 class="text-xl font-semibold">
-            Titre professionnel, développeur web et web mobile
-          </h4>
-          <p class="text-gray-600">
-            <i class="far fa-calendar-alt me-2"></i>Du 21 mai 2024 au 07 février
-            2025
-          </p>
-          <p class="mt-5">Front-end :</p>
-          <ul
-            class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
-          >
-            <li>
-              Conception de maquettes web avec Figma (desktop, tablette, mobile)
-            </li>
-            <li>Intégration HTML/CSS accessible et responsive</li>
-            <li>Apprentissage de Bootstrap</li>
-            <li>Flexbox et media queries</li>
-            <li>
-              Exercices pratiques sur les bases du langage JavaScript (DOM,
-              événements, fonctions)
-            </li>
-          </ul>
-          <p class="mt-5">Base de données :</p>
-          <ul
-            class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
-          >
-            <li>Modélisation MCD/MLD/MPD avec Looping et Draw.io</li>
-            <li>Création de base de données sur MySQL Workbench en SQL</li>
-          </ul>
-          <p class="mt-5">Back-end :</p>
-          <ul
-            class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
-          >
-            <li>
-              Développement de sites e-commerce dynamiques en Java (Eclipse)
-            </li>
-            <li>Vues JSP</li>
-            <li>Architecture MVC</li>
-            <li>Classes Java</li>
-            <li>
-              Mise en œuvre de la couche DAO pour gérer les opérations CRUD
-              (Create, Read, Update, Delete)
-            </li>
-            <li>Liaison MySQL</li>
-            <li>Hachage SHA-1</li>
-            <li>Intégration Stripe</li>
-          </ul>
-          <p class="mt-5">Projet final :</p>
-          <ul
-            class="list-disc list-inside text-gray-700 flex flex-col mt-3 gap-3"
-          >
-            <li>Site e-commerce complet présenté au jury</li>
-            <li>Front-end avec JSP/HTML/CSS</li>
-            <li>Back-end Java avec DAO et Servlets</li>
-            <li>Base de données connectée</li>
-          </ul>
-          <ul
-            class="list-disc list-inside text-gray-700 flex flex-col mt-8 gap-3"
-          >
-            <li>
-              Découverte de Unity 3D (expérience limitée à cause des contraintes
-              matérielles)
-            </li>
-            <li>Initiation au CMS WordPress sans approfondissement</li>
-          </ul>
-          <p>
-            <a
-              href="https://tinyurl.com/yc7m4n4h"
-              target="_blank"
-              class="text-blue-600 hover:underline"
-            >
-              <i class="fas fa-map-marker-alt me-2 mt-5"></i>30 Rue de Chanzy,
-              71200 Le Creusot
+              <i class="fas fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+              alizaryana.com
             </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         FORMATION
+    ══════════════════════════════════════ -->
+    <section id="formation">
+      <h2 class="section-title"><span class="icon-dot"></span>Formation</h2>
+      <div class="card">
+        <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
+          <h3 class="text-base font-semibold text-white">Titre professionnel - Développeur web et web mobile</h3>
+          <span class="badge">RNCP Niv. 5</span>
+        </div>
+        <p class="text-sm text-muted mb-1">
+          <i class="far fa-calendar-alt mr-1" aria-hidden="true"></i>Mai 2024 - Février 2025 - Le Creusot (71)
+        </p>
+        <a
+          href="https://tinyurl.com/yc7m4n4h"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 text-accent text-xs hover:text-glow transition-colors mb-5"
+          aria-label="Voir l'adresse de l'établissement sur la carte"
+        >
+          <i class="fas fa-map-marker-alt text-xs" aria-hidden="true"></i>
+          30 Rue de Chanzy, 71200 Le Creusot
+        </a>
+
+        <div class="grid md:grid-cols-3 gap-4 mt-2">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-accent mb-2">Front-end</p>
+            <ul class="text-sm space-y-1" style="color:#b0b8cc;">
+              <li>Intégration HTML/CSS responsive</li>
+              <li>Maquettes Figma (multi-support)</li>
+              <li>Bootstrap, Flexbox, media queries</li>
+              <li>Bases JavaScript (DOM, événements)</li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-accent mb-2">Base de données</p>
+            <ul class="text-sm space-y-1" style="color:#b0b8cc;">
+              <li>Modélisation MCD / MLD / MPD</li>
+              <li>SQL avec MySQL Workbench</li>
+              <li>Looping, Draw.io</li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-accent mb-2">Back-end</p>
+            <ul class="text-sm space-y-1" style="color:#b0b8cc;">
+              <li>Java (Eclipse), architecture MVC</li>
+              <li>DAO, Servlets, JSP</li>
+              <li>CRUD, connexion MySQL</li>
+              <li>Intégration Stripe</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-5 pt-4 border-t border-edge">
+          <p class="text-xs font-semibold uppercase tracking-wider text-accent mb-2">Projet final</p>
+          <p class="text-sm" style="color:#b0b8cc;">
+            Site e-commerce complet présenté au jury : front-end JSP/HTML/CSS, back-end Java (DAO + Servlets), base de données MySQL connectée.
           </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Compétences -->
-      <section id="competences">
-        <h3 class="text-2xl font-bold text-blue-700 mb-4">
-          <i class="fas fa-code me-2"></i> Compétences
-        </h3>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="text-lg font-semibold">
-              <i class="fab fa-java"></i> Java
-            </h4>
-            <ul class="list-disc list-inside text-gray-700">
-              <li>Maîtrise de l'architecture MVC</li>
-              <li>Connexion à la base de données</li>
-              <li>DAO, classes, Servlets</li>
-            </ul>
-          </div>
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="text-lg font-semibold">
-              <i class="fas fa-database"></i> SQL
-            </h4>
-            <ul class="list-disc list-inside text-gray-700">
-              <li>CRUD sur les tables</li>
-              <li>Colonnes : ajout, modification, suppression</li>
-              <li>Insertion de lignes</li>
-            </ul>
-          </div>
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="text-lg font-semibold">
-              <i class="fab fa-js"></i> JavaScript
-            </h4>
-            <ul class="list-disc list-inside text-gray-700">
-              <li>Variables, fonctions, conditions, boucles, tableaux</li>
-            </ul>
-          </div>
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="text-lg font-semibold">
-              <i class="fab fa-css3-alt"></i> CSS
-            </h4>
-            <ul class="list-disc list-inside text-gray-700">
-              <li>Sélecteurs : :hover, :focus, :nth-child.</li>
-              <li>Modèle boîte : padding, margin, border-box.</li>
-              <li>Flexbox : justify-content, align-items.</li>
-              <li>Grid : grid-template-areas, minmax().</li>
-              <li>Animations : @keyframes, transitions.</li>
-              <li>Responsive : media queries, clamp(), vw.</li>
-              <li>Variables : :root, var(--color) thèmes.</li>
-            </ul>
-          </div>
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="text-lg font-semibold">
-              <i class="fab fa-html5"></i> HTML
-            </h4>
-            <ul class="list-disc list-inside text-gray-700">
-              <li>Normes : Maîtrise HTML5, éléments sémantiques.</li>
-              <li>Accessibilité : Attributs ARIA, normes WCAG.</li>
-              <li>Formulaires : Validation native, inputs multimédias.</li>
-              <li>Multimédia : Intégration audio, video.</li>
-              <li>Responsive : Meta viewport, media queries CSS.</li>
-              <li>Sécurité : Évitement injections, optimisation perf.</li>
-              <li>Outils : Bootstrap pour grids HTML.</li>
-            </ul>
-          </div>
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="text-lg font-semibold">
-              <i class="fas fa-tools"></i> Outils
-            </h4>
-            <div class="grid grid-cols-2 gap-x-4 text-gray-700">
-              <ul class="list-disc list-inside">
-                <li>GitHub</li>
-                <li>Trello</li>
-                <li>Figma</li>
-                <li>Looping</li>
-                <li>draw.io</li>
-              </ul>
-              <ul class="list-disc list-inside">
-                <li>VS Code</li>
-                <li>MySQL Workbench</li>
-                <li>Apache NetBeans</li>
-                <li>Eclipse</li>
-              </ul>
-            </div>
+
+    <!-- ═══════════════════════════════════
+         COMPÉTENCES
+    ══════════════════════════════════════ -->
+    <section id="competences">
+      <h2 class="section-title"><span class="icon-dot"></span>Compétences</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <!-- HTML/CSS -->
+        <div class="card">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <i class="fab fa-html5 text-accent" aria-hidden="true"></i> HTML / CSS
+          </h3>
+          <ul class="text-sm space-y-1" style="color:#b0b8cc;">
+            <li>HTML5 sémantique, accessibilité ARIA / WCAG</li>
+            <li>Flexbox, Grid, animations @keyframes</li>
+            <li>Responsive : media queries, clamp(), vw</li>
+            <li>Variables CSS, thèmes, pseudo-sélecteurs</li>
+          </ul>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="card">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <i class="fab fa-js text-accent" aria-hidden="true"></i> JavaScript
+          </h3>
+          <ul class="text-sm space-y-1" style="color:#b0b8cc;">
+            <li>ES6+ : fonctions, tableaux, objets, événements</li>
+            <li>Manipulation du DOM</li>
+            <li>Fetch API, gestion asynchrone</li>
+          </ul>
+        </div>
+
+        <!-- Vue / Nuxt -->
+        <div class="card">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <i class="fab fa-vuejs text-accent" aria-hidden="true"></i> Vue.js / Nuxt
+          </h3>
+          <ul class="text-sm space-y-1" style="color:#b0b8cc;">
+            <li>Composants Vue 3, Composition API</li>
+            <li>v-model, v-for, v-if, emit, computed</li>
+            <li>Rendu côté serveur avec Nuxt (SSR)</li>
+            <li>Initialisation Vite, organisation modulaire</li>
+          </ul>
+        </div>
+
+        <!-- Tailwind -->
+        <div class="card">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <span class="text-accent font-bold text-base" aria-hidden="true">tw</span> Tailwind CSS
+          </h3>
+          <ul class="text-sm space-y-1" style="color:#b0b8cc;">
+            <li>Utility-first, responsive classes</li>
+            <li>Configuration theme personnalisée</li>
+            <li>Méthode BEM adaptée aux composants</li>
+          </ul>
+        </div>
+
+        <!-- SQL -->
+        <div class="card">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <i class="fas fa-database text-accent" aria-hidden="true"></i> SQL / MySQL
+          </h3>
+          <ul class="text-sm space-y-1" style="color:#b0b8cc;">
+            <li>Requêtes CRUD, jointures</li>
+            <li>Modélisation MCD/MLD</li>
+            <li>MySQL Workbench</li>
+          </ul>
+        </div>
+
+        <!-- Java -->
+        <div class="card">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <i class="fab fa-java text-accent" aria-hidden="true"></i> Java
+          </h3>
+          <ul class="text-sm space-y-1" style="color:#b0b8cc;">
+            <li>Architecture MVC, Servlets, JSP</li>
+            <li>Couche DAO, CRUD</li>
+            <li>Connexion MySQL, Eclipse</li>
+          </ul>
+        </div>
+
+        <!-- Outils -->
+        <div class="card md:col-span-2">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <i class="fas fa-tools text-accent" aria-hidden="true"></i> Outils
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">VS Code</span>
+            <span class="badge">Figma</span>
+            <span class="badge">GitHub</span>
+            <span class="badge">MySQL Workbench</span>
+            <span class="badge">Eclipse</span>
+            <span class="badge">Trello</span>
+            <span class="badge">Looping</span>
+            <span class="badge">Draw.io</span>
+            <span class="badge">Laragon</span>
           </div>
         </div>
-      </section>
 
-      <!-- Atouts -->
-      <section id="atouts">
-        <h3 class="text-2xl font-bold text-blue-700 mb-4">
-          <i class="fas fa-star"></i> Atouts
-        </h3>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="font-semibold">
-              <i class="fas fa-user"></i> Qualités personnelles
-            </h4>
-            <ul class="list-disc list-inside text-gray-700">
-              <li>Rigueur</li>
-              <li>Précision</li>
-              <li>Inventivité</li>
-              <li>Patience</li>
-            </ul>
-          </div>
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="font-semibold">
-              <i class="fas fa-users"></i> Compétences transversales
-            </h4>
-            <ul class="list-disc list-inside text-gray-700">
-              <li>Travail en équipe</li>
-              <li>Autonomie</li>
-              <li>Organisation</li>
-              <li>Adaptabilité</li>
-            </ul>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         ATOUTS
+    ══════════════════════════════════════ -->
+    <section id="atouts">
+      <h2 class="section-title"><span class="icon-dot"></span>Atouts</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="card">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <i class="fas fa-user text-accent" aria-hidden="true"></i> Qualités personnelles
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Rigueur</span>
+            <span class="badge">Précision</span>
+            <span class="badge">Inventivité</span>
+            <span class="badge">Patience</span>
           </div>
         </div>
-      </section>
-
-      <!-- Centres d'intérêt -->
-      <section id="interets">
-        <h3 class="text-2xl font-bold text-blue-700 mb-4">
-          <i class="fas fa-heart"></i> Centres d'intérêt
-        </h3>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="font-semibold"><i class="fas fa-tv"></i> Anime</h4>
-            <p>One Piece, My Hero Academia, Demon Slayer</p>
-          </div>
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="font-semibold">
-              <i class="fas fa-edit"></i> Contribution en ligne
-            </h4>
-            <p>Édition de wikis Fandom (My Hero Academia & Demon Slayer)</p>
-          </div>
-          <div class="bg-white p-4 rounded shadow">
-            <h4 class="font-semibold">
-              <i class="fas fa-gamepad"></i> Création de contenu
-            </h4>
-            <p>Création de maps Hello Neighbor via Hello Mod Kit</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer
-      class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-8"
-      id="contact"
-    >
-      <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-2xl font-semibold mb-4">Contact</h2>
-        <div class="flex flex-wrap justify-center gap-6">
-          <div class="flex items-center gap-2">
-            <i class="fas fa-globe"></i>
-            <a href="https://lucas-maniewski.fr" target="_blank" rel="noopener noreferrer">Mon site web</a>
-          </div>
-          <div class="flex items-center gap-2">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:contact@lucas-maniewski.fr" class="hover:underline"
-              >contact@lucas-maniewski.fr</a
-            >
-          </div>
-          <div class="flex items-center gap-2">
-            <i class="fas fa-phone"></i>
-            <a href="tel:+33784566120" class="hover:underline"
-              >07 84 56 61 20</a
-            >
-          </div>
-          <div class="flex items-center gap-2">
-            <i class="fab fa-linkedin"></i>
-            <a
-              href="https://www.linkedin.com/in/lucas-maniewski-1a80151b0/"
-              target="_blank"
-              class="hover:underline"
-              >LinkedIn</a
-            >
-          </div>
-          <div class="flex items-center gap-2">
-            <i class="fas fa-map-marker-alt"></i>
-            <a
-              href="https://www.google.com/maps/place/71670+Saint-Pierre-de-Varennes/"
-              target="_blank"
-              class="hover:underline"
-              >Saint Pierre de Varennes</a
-            >
+        <div class="card">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <i class="fas fa-users text-accent" aria-hidden="true"></i> Compétences transversales
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Autonomie</span>
+            <span class="badge">Organisation</span>
+            <span class="badge">Adaptabilité</span>
+            <span class="badge">Travail en équipe</span>
           </div>
         </div>
       </div>
-      <!-- Bouton qui déclenche le modal -->
-      <button
-        id="cv-actions-btn"
-        class="fixed bottom-4 right-4 mt-6 mx-auto block bg-blue-500 hover:bg-indigo-700 text-white text-sm font-medium py-2 px-4 rounded shadow transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
-        aria-label="Ouvrir les actions de CV"
-      >
-        <i class="fas fa-print mr-2" aria-hidden="true"></i> Télécharger /
-        imprimer le CV
-      </button>
-      <button
-        id="btn-back-to-top"
-        class="hidden fixed bottom-20 right-4 bg-blue-500 hover:bg-blue-700 text-white rounded-full p-3 shadow-md"
-      >
-        <i class="fas fa-arrow-up"></i>
-      </button>
-    </footer>
+    </section>
 
-    <!-- Modal pour télécharger/imprimer (initialement masqué) -->
-    <div
-      id="cvActionsModal"
-      class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50"
-      role="dialog"
-      aria-labelledby="cvActionsModalLabel"
-      aria-hidden="true"
-    >
-      <div class="bg-white rounded-lg shadow-lg w-full max-w-md mx-4">
-        <!-- Header -->
-        <div class="flex justify-between items-center border-b p-4">
-          <h5
-            class="text-lg font-semibold text-gray-800"
-            id="cvActionsModalLabel"
-          >
-            Souhaitez-vous ?
-          </h5>
-          <button
-            type="button"
-            id="closeModalBtn"
-            class="text-gray-500 hover:text-gray-700"
-            aria-label="Fermer"
-          >
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
 
-        <!-- Body -->
-        <div class="p-4 space-y-4">
-          <button
-            type="button"
-            class="w-full bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 flex items-center justify-center gap-2"
-            id="downloadCV"
-          >
-            <i class="fas fa-download"></i>Télécharger
-          </button>
-          <button
-            type="button"
-            class="w-full bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700 flex items-center justify-center gap-2"
-            id="printCV"
-          >
-            <i class="fas fa-print"></i>Imprimer
-          </button>
-        </div>
 
-        <!-- Footer -->
-        <div class="flex justify-end border-t p-4">
-          <button
-            type="button"
-            class="text-gray-600 hover:text-gray-800"
-            id="cancelModalBtn"
-          >
-            Annuler
-          </button>
-        </div>
+  </main>
+
+
+  <!-- ═══════════════════════════════════
+       FOOTER / CONTACT
+  ══════════════════════════════════════ -->
+  <footer id="contact" class="border-t border-edge mt-8 py-12" style="background:#181c27;">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold text-white mb-2">Discutons de votre projet</h2>
+      <p class="text-muted text-sm mb-8">Disponible pour de nouvelles missions - Réponse sous 24h</p>
+
+      <div class="flex flex-wrap justify-center gap-4 text-sm">
+        <a
+          href="https://lucas-maniewski.fr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg footer-link"
+          aria-label="Visiter mon site web (ouvre dans un nouvel onglet)"
+        >
+          <i class="fas fa-globe text-xs" aria-hidden="true"></i> Mon site web
+        </a>
+        <a
+          href="mailto:contact@lucas-maniewski.fr"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg footer-link"
+        >
+          <i class="fas fa-envelope text-xs" aria-hidden="true"></i> contact@lucas-maniewski.fr
+        </a>
+        <a
+          href="tel:+33784566120"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg footer-link"
+        >
+          <i class="fas fa-phone text-xs" aria-hidden="true"></i> 07 84 56 61 20
+        </a>
+        <a
+          href="https://www.linkedin.com/in/lucas-maniewski-1a80151b0/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg footer-link"
+          aria-label="Mon profil LinkedIn (ouvre dans un nouvel onglet)"
+        >
+          <i class="fab fa-linkedin text-xs" aria-hidden="true"></i> LinkedIn
+        </a>
+        <a
+          href="https://www.google.com/maps/place/71670+Saint-Pierre-de-Varennes/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg footer-link"
+          aria-label="Voir Saint-Pierre-de-Varennes sur la carte (ouvre dans un nouvel onglet)"
+        >
+          <i class="fas fa-map-marker-alt text-xs" aria-hidden="true"></i> Saint-Pierre-de-Varennes
+        </a>
+      </div>
+
+      <p class="text-xs mt-8" style="color:#9ca3af;">© 2025 Lucas Maniewski - EI Micro-entreprise</p>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════
+       BOUTONS FLOTTANTS
+  ══════════════════════════════════════ -->
+  <button
+    id="cv-actions-btn"
+    class="fixed bottom-4 right-4 z-30 inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-white shadow-lg focus:outline-none cv-pdf-btn"
+    aria-label="Télécharger ou imprimer le CV"
+  >
+    <i class="fas fa-download text-xs" aria-hidden="true"></i> CV PDF
+  </button>
+
+  <button
+    id="btn-back-to-top"
+    class="hidden fixed bottom-16 right-4 z-30 p-3 rounded-full text-white shadow-lg focus:outline-none btn-back"
+    aria-label="Retour en haut de page"
+  >
+    <i class="fas fa-arrow-up text-sm" aria-hidden="true"></i>
+  </button>
+
+
+  <!-- ═══════════════════════════════════
+       MODAL PDF
+  ══════════════════════════════════════ -->
+  <div
+    id="cvActionsModal"
+    class="hidden fixed inset-0 bg-black bg-opacity-70 items-center justify-center z-50"
+    role="dialog"
+    aria-labelledby="cvActionsModalLabel"
+    aria-modal="true"
+    aria-hidden="true"
+  >
+    <div class="rounded-xl shadow-2xl w-full max-w-sm mx-4" style="background:#181c27; border:1px solid #242838;">
+      <div class="flex justify-between items-center p-5 border-b border-edge">
+        <h3 class="font-semibold text-white" id="cvActionsModalLabel">Exporter le CV</h3>
+        <button
+          id="closeModalBtn"
+          class="p-2 rounded-lg hover:bg-edge transition-colors text-muted hover:text-white"
+          aria-label="Fermer"
+        >
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="p-5 space-y-3">
+        <button
+          id="downloadCV"
+          class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-medium text-white focus:outline-none modal-dl"
+        >
+          <i class="fas fa-download" aria-hidden="true"></i> Télécharger le PDF
+        </button>
+        <button
+          id="printCV"
+          class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-medium text-white focus:outline-none modal-print"
+        >
+          <i class="fas fa-print" aria-hidden="true"></i> Imprimer
+        </button>
+      </div>
+      <div class="flex justify-end px-5 pb-5">
+        <button id="cancelModalBtn" class="text-sm text-muted hover:text-white transition-colors">Annuler</button>
       </div>
     </div>
+  </div>
 
-    <!-- Ton script JS externe -->
-    <script src="assets/js/script.js" defer></script>
-    <script src="assets/js/menu.js" defer></script>
-  </body>
+
+  <script src="assets/js/menu.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+</body>
 </html>

@@ -1,51 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const btnBackToTop = document.getElementById("btn-back-to-top");
-  const modal = document.getElementById("cvActionsModal");
-  const openModalBtn = document.getElementById("cv-actions-btn");
+  const btnBackToTop  = document.getElementById("btn-back-to-top");
+  const modal         = document.getElementById("cvActionsModal");
+  const openModalBtn  = document.getElementById("cv-actions-btn");
+  const downloadBtn   = document.getElementById("downloadCV");
+  const printBtn      = document.getElementById("printCV");
   const closeModalBtns = [
     document.getElementById("closeModalBtn"),
-    document.getElementById("cancelModalBtn")
+    document.getElementById("cancelModalBtn"),
   ];
-  const downloadBtn = document.getElementById("downloadCV");
-  const printBtn = document.getElementById("printCV");
 
-  // === Retour en haut ===
-  window.addEventListener(
-    "scroll",
-    () => {
-      const show = window.scrollY > 20;
-      btnBackToTop.classList.toggle("hidden", !show);
-      btnBackToTop.classList.toggle("flex", show);
-    },
-    { passive: true }
-  );
+  // ── Retour en haut ──
+  window.addEventListener("scroll", () => {
+    const show = window.scrollY > 200;
+    btnBackToTop.classList.toggle("hidden", !show);
+    btnBackToTop.classList.toggle("flex", show);
+  }, { passive: true });
 
   btnBackToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // === Modal (ouvrir) ===
+  // ── Modal ──
   openModalBtn.addEventListener("click", (e) => {
     e.preventDefault();
     showModal();
   });
 
-  // === Modal (fermer) ===
-  closeModalBtns.forEach((btn) =>
-    btn.addEventListener("click", closeModal)
-  );
+  closeModalBtns.forEach((btn) => btn?.addEventListener("click", closeModal));
 
-  // Fermer modal avec Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !modal.classList.contains("hidden")) {
       closeModal();
     }
   });
 
-  // === Télécharger PDF ===
+  // Fermer modal en cliquant sur le fond
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // ── Télécharger ──
   downloadBtn.addEventListener("click", () => {
     const link = document.createElement("a");
-    link.href = "assets/fichiers/CV MANIEWSKI.pdf";
+    link.href     = "assets/fichiers/CV MANIEWSKI.pdf";
     link.download = "CV MANIEWSKI.pdf";
     document.body.appendChild(link);
     link.click();
@@ -53,47 +50,29 @@ document.addEventListener("DOMContentLoaded", () => {
     closeModal();
   });
 
-  // === Imprimer PDF ===
+  // ── Imprimer ──
   printBtn.addEventListener("click", () => {
     const pdfWindow = window.open("assets/fichiers/CV MANIEWSKI.pdf", "_blank");
     if (pdfWindow) {
-      pdfWindow.onload = () => pdfWindow.print();
+      pdfWindow.addEventListener("load", () => {
+        try { pdfWindow.print(); } catch (e) { console.error("Impression impossible :", e); }
+      });
+      // Fallback si l'événement load ne se déclenche pas
       setTimeout(() => {
-        try {
-          pdfWindow.print();
-        } catch (e) {
-          console.error("Erreur lors de l'impression :", e);
-        }
-      }, 1000);
+        try { pdfWindow.print(); } catch (e) { /* silencieux */ }
+      }, 1200);
     }
     closeModal();
   });
 
-  // === Accessibilité : focus visuel ===
-  document.querySelectorAll("a, button").forEach((el) => {
-    el.addEventListener("focus", () => {
-      el.style.outline = "2px solid #2563eb"; // bleu Tailwind
-    });
-    el.addEventListener("blur", () => {
-      el.style.outline = "none";
-    });
-  });
-
-  // === Accessibilité : aria-label auto pour icônes liens ===
-  document.querySelectorAll("a i").forEach((icon) => {
-    const parent = icon.closest("a");
-    if (parent && !parent.hasAttribute("aria-label")) {
-      parent.setAttribute("aria-label", parent.textContent.trim());
-    }
-  });
-
-  // === Fonctions ===
+  // ── Fonctions ──
   function showModal() {
     modal.classList.remove("hidden");
     modal.classList.add("flex");
     modal.setAttribute("aria-hidden", "false");
-    modal.focus();
     document.body.classList.add("overflow-hidden");
+    // Focus le premier bouton d'action
+    downloadBtn.focus();
   }
 
   function closeModal() {
@@ -101,5 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.add("hidden");
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("overflow-hidden");
+    openModalBtn.focus();
   }
 });
